@@ -1,0 +1,35 @@
+{
+	"name": "Google Analytics",
+	"version": "1.2.0",
+	"description": "Add Google Analytics to any theme.",
+	"demo": "http://koken.me",
+	"author": {
+		"name": "Koken",
+		"link": "https://store.koken.me/authors/koken"
+	},
+
+	"koken_version_required": "0.2.0",
+
+	"data": {
+		"tracking_id": {
+			"label": "Tracking ID",
+			"info": "You can find your tracking info by logging into Google Analytics, clicking Admin, then selecting the Tracking Info tab. Example: UA-1234567-8",
+			"type": "string",
+			"validation": {
+				"type": "regex",
+				"rule":	"^UA\\-[0-9]{4,10}\\-\\d{1,2}$",
+				"error_message": "Not a valid tracking ID. It should be in this format: UA-XXXXXXXX-X"
+			}
+		},
+		"anonymize": {
+			"label": "Anonymize IP",
+			"info": "Tells Google Analytics to anonymize the information sent by the tracker objects by removing the last octet of the IP address prior to its storage. Note that this will slightly reduce the accuracy of geographic reporting.",
+			"type": "boolean"
+		},
+		"demographics": {
+			"label": "Enable demographics and interests reports",
+			"info": "These reports let you see not only how many of your users engage over a date range, but also who those users are, and how their behavior varies by attribute (e.g., male vs. female). This option will have no effect unless you have enabled demographics reports in the Google Analytics interface.",
+			"type": "boolean"
+		}
+	}
+}
